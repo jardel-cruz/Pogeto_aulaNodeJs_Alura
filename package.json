@@ -1,7 +1,8 @@
 {
   "name": "1-aula",
   "version": "1.0.0",
-  "description": "primeiro projeto",
+  "description": "Progeto usando node Js",
+  "repository": "jardel-cruz/Progeto_aulaNodeJs_Alura",
   "type": "module",
   "main": "index.js",
   "scripts": {
