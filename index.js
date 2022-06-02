@@ -1,16 +1,6 @@
 import chalk from 'chalk';
 import fs from 'fs';
 
-// function pegaTexto (caminho) {
-//     const encoding = 'utf-8';
-//     fs.readFile(caminho, encoding, (err, data) => {
-//         if (err) {
-//             trataErro(err)
-//         }
-//         console.log(chalk.green(data));
-//     })
-// }
-
 async function pegaTexto (caminho) {
     const encoding = 'utf-8';
     try {
