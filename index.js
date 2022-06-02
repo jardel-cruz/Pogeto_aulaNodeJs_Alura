@@ -34,5 +34,7 @@ function trataErro (err) {
 
 pegaTexto('./arquivos/texto1.md');
 
+console.log('teste');
+
 
 
