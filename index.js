@@ -6,19 +6,19 @@ async function pegaTexto (caminho) {
     try {
         const texto = await fs.promises.readFile(caminho, encoding);
         console.log(chalk.green(texto));
-    } catch (err) {
-        trataErro(err);
+    } catch (error) {
+        trataErro(error);
     } finally {
         console.log(chalk.black.bgWhite.bold('Finalizado!!'));
     }
 }
 
-function trataErro (err) {
-    if (err.code === 'ENOENT') {
-        throw new Error(chalk.red(err.code, 'Não existe arquivos com esse nome no diretorio'))
+function trataErro (error) {
+    if (error.code === 'ENOENT') {
+        throw new Error(chalk.red(error.code, 'Não existe arquivos com esse nome no diretorio'))
     }
-    if (err.code === 'EISDIR') {
-        throw new Error(chalk.red(err.code, 'Impocivel ler, O endereço informado é um diretori'))
+    if (error.code === 'EISDIR') {
+        throw new Error(chalk.red(error.code, 'Impocivel ler, O endereço informado é um diretori'))
     }
 }
 
