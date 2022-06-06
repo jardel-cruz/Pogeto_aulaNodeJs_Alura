@@ -5,7 +5,7 @@ const caminho = process.argv;
 
 async function executar (caminhoDeArquivo) {
     const resuotado = await pegaTexto(caminhoDeArquivo);
-    console.log(chalk.blue('lista de links: '), resuotado)
+    console.log(chalk.blue('lista de links: '), resuotado);
 }
 
-executar(caminho[2])
+executar(caminho[2]);

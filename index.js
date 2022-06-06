@@ -11,7 +11,7 @@ function extrairLinks (texto) {
 
     // const links = regex.exec(texto);
 
-    return arrayLinks;
+    return arrayLinks.length === 0 ? 'Não á links' : arrayLinks;
 }
 
 function trataErro (error) {
