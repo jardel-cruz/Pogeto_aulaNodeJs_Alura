@@ -14,7 +14,16 @@ function extrairLinks (texto) {
     return arrayLinks;
 }
 
-async function pegaTexto (caminho) {
+function trataErro (error) {
+    if (error.code === 'ENOENT') {
+        throw new Error(chalk.red(error.code, 'Não existe arquivos com esse nome no diretorio'))
+    }
+    if (error.code === 'EISDIR') {
+        throw new Error(chalk.red(error.code, 'Impocivel ler, O endereço informado é um diretori'))
+    }
+}
+
+export default async function pegaTexto (caminho) {
     const encoding = 'utf-8';
     try {
         const texto = await fs.promises.readFile(caminho, encoding);
@@ -25,14 +34,3 @@ async function pegaTexto (caminho) {
         console.log(chalk.black.bgWhite.bold('Finalizado!!'));
     }
 }
-
-function trataErro (error) {
-    if (error.code === 'ENOENT') {
-        throw new Error(chalk.red(error.code, 'Não existe arquivos com esse nome no diretorio'))
-    }
-    if (error.code === 'EISDIR') {
-        throw new Error(chalk.red(error.code, 'Impocivel ler, O endereço informado é um diretori'))
-    }
-}
-
-pegaTexto('./arquivos/texto1.md');
