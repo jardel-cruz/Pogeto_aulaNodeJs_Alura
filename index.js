@@ -1,7 +1,8 @@
 import chalk from 'chalk';
 import fs from 'fs';
 
-function extrairLinks (texto, regex) {
+function extrairLinks (texto) {
+    const regex = /\[([^\]]*)\]\((https?:\/\/[^\)]*)\)/gm;
     const arrayLinks = [];
     let temp;
     while ((temp = regex.exec(texto)) !== null) {
@@ -13,11 +14,11 @@ function extrairLinks (texto, regex) {
     return arrayLinks;
 }
 
-async function pegaTexto (caminho, regex) {
+async function pegaTexto (caminho) {
     const encoding = 'utf-8';
     try {
         const texto = await fs.promises.readFile(caminho, encoding);
-        console.log(extrairLinks(texto, regex));
+        console.log(extrairLinks(texto));
     } catch (error) {
         trataErro(error);
     } finally {
@@ -34,6 +35,4 @@ function trataErro (error) {
     }
 }
 
-const regex = /\[([^\]]*)\]\((https?:\/\/[^\)]*)\)/gm;
-
-pegaTexto('./arquivos/texto1.md', regex);
+pegaTexto('./arquivos/texto1.md');
