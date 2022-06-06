@@ -27,10 +27,8 @@ export default async function pegaTexto (caminho) {
     const encoding = 'utf-8';
     try {
         const texto = await fs.promises.readFile(caminho, encoding);
-        console.log(extrairLinks(texto));
+        return extrairLinks(texto);
     } catch (error) {
         trataErro(error);
-    } finally {
-        console.log(chalk.black.bgWhite.bold('Finalizado!!'));
     }
 }
