@@ -1,14 +1,23 @@
 {
-  "name": "1-aula",
+  "name": "urlvalid",
   "version": "1.0.0",
-  "description": "Progeto usando node Js",
-  "repository": "jardel-cruz/Progeto_aulaNodeJs_Alura",
+  "description": "faz a validação de urls presentes em um texto .md",
+  "keywords": ["markdown", "URL"],
+  "main": "./cli.js",
   "type": "module",
-  "main": "index.js",
+  "preferGlobal": true,
   "scripts": {
     "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js",
-    "cli": "node cli.js ./arquivos/texto1.md"
+    "cli": "node cli.js "
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jardel-cruz/Progeto_aulaNodeJs_Alura"
+  },
+  "bugs": {
+    "email": "jardelcruz333@gmail.com"
+  },
+  "homepage": "hhttps://github.com/jardel-cruz/Progeto_aulaNodeJs_Alura",
   "author": "Jardel Cruz",
   "license": "ISC",
   "dependencies": {
