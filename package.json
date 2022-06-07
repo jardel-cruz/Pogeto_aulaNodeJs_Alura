@@ -1,5 +1,5 @@
 {
-  "name": "urlvalid",
+  "name": "validarurl",
   "version": "1.0.0",
   "description": "faz a validação de urls presentes em um texto .md",
   "keywords": ["markdown", "URL"],
