@@ -1,4 +1,4 @@
-import chalk from 'chalk';
+// import chalk from 'chalk';
 import fs from 'fs';
 
 function extrairLinks (texto) {
@@ -16,10 +16,10 @@ function extrairLinks (texto) {
 
 function trataErro (error) {
     if (error.code === 'ENOENT') {
-        throw new Error(chalk.red(error.code, 'Não existe arquivos com esse nome no diretorio'))
+        throw new Error(error.code)
     }
     if (error.code === 'EISDIR') {
-        throw new Error(chalk.red(error.code, 'Impocivel ler, O endereço informado é um diretori'))
+        throw new Error(error.code)
     }
 }
 

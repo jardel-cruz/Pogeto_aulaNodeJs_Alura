@@ -3,7 +3,7 @@ import fatch from 'node-fetch';
 async function statusLink (arrayURL) {
     const arrayStatus = await Promise.all(arrayURL.map(async function (url) {
         const res = await fatch(url);
-        return res.status;
+        return `${res.status} : ${res.statusText}`;
     }))
     return arrayStatus;
 }
@@ -22,6 +22,11 @@ export default async function validarLinks (arrayDeLinks) {
     const links = await pegaLinks(arrayDeLinks);
     const urlStatus = await statusLink(links);
 
-    return urlStatus;
+    const resultados = arrayDeLinks.map(function (obj, i) {
+        obj.status = urlStatus[i];
+        return obj;
+    })
+
+    return resultados;
 }
 
