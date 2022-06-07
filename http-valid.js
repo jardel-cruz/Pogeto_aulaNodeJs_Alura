@@ -1,3 +1,3 @@
-function validarLinks () {
-
+export default function validarLinks (arrayDeLinks) {
+    return arrayDeLinks;
 }
