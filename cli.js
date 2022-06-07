@@ -7,7 +7,7 @@ const caminho = process.argv;
 async function executar (caminhoDeArquivo) {
     const resuotado = await pegaTexto(caminhoDeArquivo);
     if (caminho[3] === 'validar') {
-        console.log(chalk.blue('links validados: '), validarLinks(resuotado));
+        console.log(chalk.blue('links validados: '), await validarLinks(resuotado));
     } else {
         console.log(chalk.blue('lista de links: '), resuotado);
     }
