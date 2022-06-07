@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 import pegaTexto from "./index.js";
 import chalk from "chalk";
 import validarLinks from "./http-valid.js";

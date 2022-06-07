@@ -9,9 +9,11 @@ function extrairLinks (texto) {
         arrayLinks.push({ [temp[1]] : temp[2] })
     }
 
-    // const links = regex.exec(texto);
-
-    return arrayLinks.length === 0 ? 'Não á links' : arrayLinks;
+    if (arrayLinks.length === 0) {
+        return 'não há links';
+    } else {
+        return arrayLinks;
+    }
 }
 
 function trataErro (error) {

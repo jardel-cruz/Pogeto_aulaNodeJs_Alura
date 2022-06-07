@@ -19,7 +19,8 @@ function pegaLinks (arrayDeLinks) {
 }
 
 export default async function validarLinks (arrayDeLinks) {
-    const links = await pegaLinks(arrayDeLinks);
+    try {
+        const links = await pegaLinks(arrayDeLinks);
     const urlStatus = await statusLink(links);
 
     const resultados = arrayDeLinks.map(function (obj, i) {
@@ -28,5 +29,8 @@ export default async function validarLinks (arrayDeLinks) {
     })
 
     return resultados;
+    } catch (error) {
+        return 'lista vazia'
+    }
 }
 
